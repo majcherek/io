@@ -8,6 +8,7 @@ import javax.swing.WindowConstants;
 
 import org.apache.log4j.Logger;
 
+import pl.edu.agh.cs.kraksim.main.CarMoveModel;
 import pl.edu.agh.cs.kraksim.main.MainVisualisationPanel;
 import pl.edu.agh.cs.kraksim.main.Simulation;
 
@@ -21,6 +22,8 @@ public class KraksimRunner {
 	 *            may contain config file path
 	 */
 	public static void main(String[] args) {
+		
+		CarMoveModel c = new CarMoveModel("ala:in=123,aa=4,bb=0");
 
 		final Properties props = KraksimConfigurator.getPropertiesFromFile(args);
 

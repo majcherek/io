@@ -20,6 +20,7 @@ import pl.edu.agh.cs.kraksim.iface.carinfo.CarInfoCursor;
 import pl.edu.agh.cs.kraksim.iface.carinfo.LaneCarInfoIface;
 import pl.edu.agh.cs.kraksim.iface.mon.CarDriveHandler;
 import pl.edu.agh.cs.kraksim.iface.mon.LaneMonIface;
+import pl.edu.agh.cs.kraksim.main.CarMoveModel;
 
 class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 
@@ -42,7 +43,7 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 
 	private boolean wait;
 	
-	private String carMoveModel;
+	private CarMoveModel carMoveModel;
 
 	LaneRealExt(Lane lane, RealEView ev, RealSimulationParams params) {
 		if (logger.isTraceEnabled()) {
