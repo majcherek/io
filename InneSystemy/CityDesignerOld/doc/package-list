@@ -1,0 +1,13 @@
+pl.edu.agh.cs.kraksimcitydesigner
+pl.edu.agh.cs.kraksimcitydesigner.element
+pl.edu.agh.cs.kraksimcitydesigner.helpers
+pl.edu.agh.cs.kraksimcitydesigner.inf
+pl.edu.agh.cs.kraksimcitydesigner.parser
+pl.edu.agh.cs.kraksimcitydesigner.propertiesdialogs
+pl.edu.agh.cs.kraksimcitydesigner.tools
+pl.edu.agh.cs.kraksimcitydesigner.traffic
+pl.edu.agh.cs.kraksimcitydesigner.traffic.algorithm
+pl.edu.agh.cs.kraksimcitydesigner.traffic.graph
+test.pl.edu.agh.cs.kraksimcitydesinger.element
+test.pl.edu.agh.cs.kraksimcitydesinger.helpers
+test.pl.edu.agh.cs.kraksimcitydesinger.traffic

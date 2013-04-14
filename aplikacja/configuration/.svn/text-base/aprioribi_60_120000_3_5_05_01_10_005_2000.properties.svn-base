@@ -1,0 +1,42 @@
+submodule = rule
+
+#file
+trafficFileName = test200sotlCars.txt
+
+#rule
+worldStateUpdatePeriod = 60
+aprioriUpdatePeriod = 60000
+statisticsDumpTime = 120000
+
+
+maxNumberOfInfluencedLinks = 3
+maxNumberOfInfluencedTimesteps = 4
+minNumberOfInfluencedTimesteps = 3
+
+#discretiser = apriori
+carMultiplier = 1
+discretiser = twoClass
+
+reasoner = apriori
+#reasoner = fpgrowth
+#reasoner = tertius
+
+
+outputMainFolder = aprioribi_60_120000_3_5_05_01_10_005_2000
+ 
+aprioriMinMetric = 0.5
+aprioriLowerBoundMinSupport = 0.1
+aprioriUpperBoundMinSupport = 1.0
+aprioriDelta = 0.05
+aprioriNumberRulesToFind = 2000
+
+fpGrowthMinMetric = 0.8
+fpGrowthLowerBoundMinSupport = 0.1
+fpGrowthUpperBoundMinSupport = 1.0
+fpGrowthDelta = 0.05
+fpGrowthNumberRulesToFind = 2000
+
+tertiusMaxNumberOfLiterals = 2
+tertiusNumberRulesToFind = 20000
+
+

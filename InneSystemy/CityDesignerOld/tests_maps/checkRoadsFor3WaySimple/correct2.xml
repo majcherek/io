@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoadNet>
+  <nodes>
+    <gateway id="G0" x="109" y="107" />
+    <gateway id="G1" x="337" y="109" />
+    <gateway id="G2" x="224" y="254" />
+    <intersection id="I0" x="228" y="107" />
+  </nodes>
+  <roads>
+    <road id="roads_0" street="roads_0" from="G0" to="I0">
+      <uplink>
+        <main length="119" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <right length="20" />
+        <main length="119" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_1" street="roads_1" from="I0" to="G1">
+      <uplink>
+        <main length="109" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="109" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_2" street="roads_2" from="I0" to="G2">
+      <uplink>
+        <main length="147" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="147" numberOfLanes="1" />
+      </downlink>
+    </road>
+  </roads>
+  <intersectionDescriptions>
+    <intersection id="I0">
+      <trafficLightsSchedule />
+    </intersection>
+  </intersectionDescriptions>
+</RoadNet>
+

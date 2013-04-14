@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoadNet>
+  <nodes>
+    <gateway id="G0" x="194" y="280" />
+    <gateway id="G1" x="545" y="282" />
+    <gateway id="G2" x="361" y="445" />
+    <gateway id="G3" x="339" y="118" />
+    <intersection id="I0" x="345" y="278" />
+  </nodes>
+  <roads>
+    <road id="roads_0" street="roads_0" from="G3" to="I0">
+      <uplink>
+        <main length="160" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="160" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_3" street="roads_3" from="I0" to="G0">
+      <uplink>
+        <main length="151" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="151" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_2" street="roads_2" from="I0" to="G1">
+      <uplink>
+        <main length="200" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="200" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_1" street="roads_1" from="I0" to="G2">
+      <uplink>
+        <main length="167" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="167" numberOfLanes="1" />
+      </downlink>
+    </road>
+  </roads>
+  <intersectionDescriptions>
+    <intersection id="I0">
+      <armActions arm="G0" dir="NS">
+        <action lane="0" exit="G1">
+          <rule entrance="G2" lane="0" />
+        </action>
+        <action lane="0" exit="G2" />
+        <action lane="0" exit="G3">
+          <rule entrance="G1" lane="0" />
+        </action>
+      </armActions>
+      <armActions arm="G1" dir="NS">
+        <action lane="0" exit="G0"></action>
+        <action lane="0" exit="G2">
+          <rule entrance="G3" lane="0" />
+        </action>
+        <action lane="0" exit="G3" />
+      </armActions>
+      <armActions arm="G2" dir="NS">
+        <action lane="0" exit="G0">
+          <rule entrance="G1" lane="0" />
+          <rule entrance="G3" lane="0" />
+        </action>
+        <action lane="0" exit="G3">
+          <rule entrance="G1" lane="0" />
+        </action>
+      </armActions>
+      <armActions arm="G3" dir="NS">
+        <action lane="0" exit="G0" />
+        <action lane="0" exit="G1">
+          <rule entrance="G0" lane="0" />
+          <rule entrance="G2" lane="0" />
+        </action>
+        <action lane="0" exit="G2"></action>
+      </armActions>
+      <trafficLightsSchedule>
+        <phase num="1" name="phase_1" duration="10">
+          <inlane arm="G0" lane="0" state="green" />
+          <inlane arm="G1" lane="0" state="green" />
+          <inlane arm="G2" lane="0" state="red" />
+          <inlane arm="G3" lane="0" state="green" />
+        </phase>
+        <phase num="2" name="phase_2" duration="10">
+          <inlane arm="G0" lane="0" state="green" />
+          <inlane arm="G1" lane="0" state="green" />
+          <inlane arm="G2" lane="0" state="green" />
+          <inlane arm="G3" lane="0" state="red" />
+        </phase>
+      </trafficLightsSchedule>
+    </intersection>
+  </intersectionDescriptions>
+</RoadNet>
+

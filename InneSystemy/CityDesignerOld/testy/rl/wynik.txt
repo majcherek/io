@@ -1,0 +1,2 @@
+from;to;count;avg.;duration;<-std;dev.;avg.;velocity;<-[kph]
+A7;A3;100;481,4;75,9;1,05;28,2

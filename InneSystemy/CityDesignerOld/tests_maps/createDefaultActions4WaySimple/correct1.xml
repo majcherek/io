@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RoadNet>
+  <nodes>
+    <gateway id="G0" x="194" y="280" />
+    <gateway id="G1" x="545" y="282" />
+    <gateway id="G2" x="361" y="445" />
+    <gateway id="G3" x="339" y="118" />
+    <intersection id="I0" x="345" y="278" />
+  </nodes>
+  <roads>
+    <road id="roads_0" street="roads_0" from="G3" to="I0">
+      <uplink>
+        <main length="160" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="160" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_3" street="roads_3" from="I0" to="G0">
+      <uplink>
+        <main length="151" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="151" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_2" street="roads_2" from="I0" to="G1">
+      <uplink>
+        <main length="200" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="200" numberOfLanes="1" />
+      </downlink>
+    </road>
+    <road id="roads_1" street="roads_1" from="I0" to="G2">
+      <uplink>
+        <main length="167" numberOfLanes="1" />
+      </uplink>
+      <downlink>
+        <main length="167" numberOfLanes="1" />
+      </downlink>
+    </road>
+  </roads>
+  <intersectionDescriptions>
+    <intersection id="I0">
+      <trafficLightsSchedule>
+      </trafficLightsSchedule>
+    </intersection>
+  </intersectionDescriptions>
+</RoadNet>
+

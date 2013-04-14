@@ -1,0 +1,53 @@
+submodule = classification
+#submodule = rule
+#submodule = data
+
+#file
+trafficFileName = dl_1000000_600_time1_3_links_3
+
+#rule
+worldStateUpdatePeriod = 600
+aprioriUpdatePeriod = 500000
+statisticsDumpTime = 1000000
+
+
+maxNumberOfInfluencedLinks = 3
+maxNumberOfInfluencedTimesteps = 3
+minNumberOfInfluencedTimesteps = 1
+
+discretiser = blank
+carMultiplier = 1
+#discretiser = fpgrowth
+
+#classifier = bayes
+classifier = j48
+reasoner = apriori
+#reasoner = fpgrowth
+#reasoner = tertius
+
+#average=simple
+#averageSize=4
+#average=running
+#averageWeight=3
+average=none
+
+dataType = carsDensity
+#dataType = carsLeaving
+#dataType = durationLevel
+
+outputMainFolder = dl_1000000_300_time1_3_links_3_noavg
+ 
+aprioriMinMetric = 0.5
+aprioriLowerBoundMinSupport = 0.1
+aprioriUpperBoundMinSupport = 1.0
+aprioriDelta = 0.05
+aprioriNumberRulesToFind = 2000
+
+fpGrowthMinMetric = 0.8
+fpGrowthLowerBoundMinSupport = 0.1
+fpGrowthUpperBoundMinSupport = 1.0
+fpGrowthDelta = 0.05
+fpGrowthNumberRulesToFind = 2000
+
+tertiusMaxNumberOfLiterals = 2
+tertiusNumberRulesToFind = 20000

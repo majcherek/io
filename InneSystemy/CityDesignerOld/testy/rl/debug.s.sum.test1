@@ -1,0 +1,14 @@
+CITY STATS
+==========
+  sim. duration   avg. velocity
+          10299            0,54
+
+ROUTE STATS
+===========
+  from     to  count   avg. duration      <-std dev.   avg. velocity         <-[kph]
+    A7     A3    100           481,4            75,9            1,05            28,2
+
+LINK STATS
+==========
+  from     to  count   avg. duration      <-std dev.   avg. velocity         <-[kph]
+   A78    A75     25            60,2             1,9            1,80            48,5

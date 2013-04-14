@@ -1,0 +1,60 @@
+submodule = timeSeries
+#submodule = classification
+#submodule = rule
+#submodule = data
+
+timeSeriesFolder = 80000_60_avg10_carsDensity
+
+#file
+trafficFileName = 240000_60_time3_5_links_3
+#trafficFileName = 20000_60_time1_6_links_2
+
+
+#rule
+worldStateUpdatePeriod = 60
+aprioriUpdatePeriod = 0
+statisticsDumpTime = 80000
+
+
+maxNumberOfInfluencedLinks = 3
+maxNumberOfInfluencedTimesteps = 5
+minNumberOfInfluencedTimesteps = 3
+
+discretiser = blank
+carMultiplier = 1
+#discretiser = fpgrowth
+
+#classifier = bayes
+classifier = j48
+#classifier = nnge
+
+reasoner = apriori
+#reasoner = fpgrowth
+#reasoner = tertius
+
+average=simple
+averageSize=10
+#average=running
+#averageWeight=4
+#average=none
+
+dataType = carsDensity
+#dataType = carsLeaving
+#dataType = durationLevel
+
+outputMainFolder = 240000_60_time3_5_links_3_avg10_pred_test3
+ 
+aprioriMinMetric = 0.5
+aprioriLowerBoundMinSupport = 0.1
+aprioriUpperBoundMinSupport = 1.0
+aprioriDelta = 0.05
+aprioriNumberRulesToFind = 2000
+
+fpGrowthMinMetric = 0.8
+fpGrowthLowerBoundMinSupport = 0.1
+fpGrowthUpperBoundMinSupport = 1.0
+fpGrowthDelta = 0.05
+fpGrowthNumberRulesToFind = 2000
+
+tertiusMaxNumberOfLiterals = 2
+tertiusNumberRulesToFind = 20000

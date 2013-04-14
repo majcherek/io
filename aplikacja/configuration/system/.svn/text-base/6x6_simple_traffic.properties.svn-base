@@ -1,0 +1,28 @@
+cityMapFile = C:\\cos\\prediction\\6x6map\\sotl_nopred\\6x6map.xml
+
+travelSchemeFile = C:\\cos\\prediction\\6x6map\\traffic_test\\e2w2_1.xml
+statOutFile = C:\\cos\\prediction\\6x6map\\sotl_strongbig\\debug.s
+
+lastSessionFile = lastSession.properties
+
+
+#visualization = false
+visualization = true
+#algorithm = sotl:zone=18
+#algorithm = rl
+algorithm = static
+
+dynamicRouting=true
+#dynamicRouting=false
+#enablePrediction = false
+enablePrediction = false
+
+
+yellowTransition = 3
+#turnStats = true
+#turnStatsQuietPeriod = 1000
+minimalSpeedUsingPrediction = false
+globalUpdateInterval = 300
+
+
+predictionFile = oldTests\\predConfigs\\prediction.strong_big.config.xml
