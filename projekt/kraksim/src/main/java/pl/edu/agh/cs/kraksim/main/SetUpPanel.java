@@ -45,6 +45,7 @@ public class SetUpPanel extends JPanel
 
   private Properties             params;
   private Properties             lastSessionParams;
+  private String carMoveModel;
 
   public SetUpPanel(MainVisualisationPanel parent, Properties params) {
     super();
@@ -168,10 +169,34 @@ public class SetUpPanel extends JPanel
 				CentrallityCalculator.measureType = (MeasureType)cb.getSelectedItem();
 			}
 		});
+
+	measurePanel.add(types);
+	add(measurePanel);
+
+	JPanel moveModelPane = new JPanel();
+	moveModelPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+	moveModelPane.setBorder(BorderFactory
+			.createTitledBorder("Move model settings"));
+	JComboBox<String> moveModels = new JComboBox<String>();
+	moveModels.addItem("co");
+	moveModels.addItem("nagle");
+	moveModels.addItem("to po diable");
+	moveModels.addActionListener(new ActionListener() {
 		
-		measurePanel.add(types);
-		add(measurePanel);
-    
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JComboBox<String> source = (JComboBox<String>)e.getSource();
+			carMoveModel = (String) source.getSelectedItem();
+		}
+	});
+	
+	moveModelPane.add(moveModels);
+		
+	String lastMoveModel = getParam("carMoveModel");
+	moveModels.setSelectedItem(lastMoveModel);
+	
+	add(moveModelPane);
+
     JPanel commandsPane = new JPanel();
     commandsPane.setLayout( new FlowLayout( FlowLayout.RIGHT ) );
     commandsPane.setBorder( BorderFactory.createTitledBorder( "Commands" ) );
@@ -198,6 +223,7 @@ public class SetUpPanel extends JPanel
         props.setProperty( "yellowTransition", yellowTransition.getText() );
         storeParam       ( "yellowTransition", yellowTransition.getText() );
         storeParam       ( "workDir", fc.getCurrentDirectory().toString() );
+        props.setProperty("carMoveModel", carMoveModel);
         
         props.setProperty("visualization", "true");
         
