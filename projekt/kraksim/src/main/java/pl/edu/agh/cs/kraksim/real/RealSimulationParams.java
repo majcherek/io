@@ -23,6 +23,7 @@ public final class RealSimulationParams
    *  some action, that an action can be performed
    */
   final int                 priorLaneTimeHeadway;
+  final String carMoveModel;
 
   public RealSimulationParams(
       Random rg,
@@ -31,7 +32,7 @@ public final class RealSimulationParams
       int priorLaneTimeHeadway)
   {
     this.rg = rg;
-
+    this.carMoveModel="nagle";
     this.maxVelocity = maxVelocity;
     this.decelProb = decelProb;
     this.priorLaneTimeHeadway = priorLaneTimeHeadway;
@@ -39,9 +40,9 @@ public final class RealSimulationParams
   }
 
   /* use default values */
-  public RealSimulationParams(Random rg) {
+  public RealSimulationParams(Random rg,String carMoveModel) {
     this.rg = rg;
-
+    this.carMoveModel=carMoveModel;
     maxVelocity = DEFAULT_MAX_VELOCITY;
     decelProb = DEFAULT_DECEL_PROB;
     priorLaneTimeHeadway = DEFAULT_PRIOR_LANE_TIME_HEADWAY;

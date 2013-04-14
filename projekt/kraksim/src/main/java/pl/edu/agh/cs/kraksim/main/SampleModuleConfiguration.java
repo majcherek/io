@@ -71,7 +71,7 @@ public class SampleModuleConfiguration {
 		try {
 			// this is Nagel-Schreckenberg Simulation Module
 			final Module physModule = core.newModule("phys",
-					new RealModuleCreator(new RealSimulationParams(params.getModelRg())));
+					new RealModuleCreator(new RealSimulationParams(params.getModelRg(),params.getCarMoveModel())));
 			simView = new SimIView(physModule);
 
 			carInfoView = new CarInfoIView(physModule);

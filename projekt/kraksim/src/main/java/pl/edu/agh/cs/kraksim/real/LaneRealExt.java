@@ -41,6 +41,8 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 	private int speedLimit;
 
 	private boolean wait;
+	
+	private String carMoveModel;
 
 	LaneRealExt(Lane lane, RealEView ev, RealSimulationParams params) {
 		if (logger.isTraceEnabled()) {
@@ -50,6 +52,7 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 		this.realView = ev;
 		this.params = params;
 		this.speedLimit = lane.getSpeedLimit();
+		this.carMoveModel=params.carMoveModel;
 
 		offset = lane.getOffset();// linkLength() - lane.getLength();
 		cars = new LinkedList<Car>();
