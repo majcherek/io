@@ -2,6 +2,8 @@ package pl.edu.agh.cs.kraksim.real;
 
 import java.util.Random;
 
+import pl.edu.agh.cs.kraksim.main.CarMoveModel;
+
 public final class RealSimulationParams
 {
   final public static float CELL_LENGTH_IN_METERS           = 7.5f;
@@ -23,7 +25,7 @@ public final class RealSimulationParams
    *  some action, that an action can be performed
    */
   final int                 priorLaneTimeHeadway;
-  final String carMoveModel;
+  final CarMoveModel carMoveModel;
 
   public RealSimulationParams(
       Random rg,
@@ -32,7 +34,7 @@ public final class RealSimulationParams
       int priorLaneTimeHeadway)
   {
     this.rg = rg;
-    this.carMoveModel="nagle";
+    this.carMoveModel=new CarMoveModel("nagle");
     this.maxVelocity = maxVelocity;
     this.decelProb = decelProb;
     this.priorLaneTimeHeadway = priorLaneTimeHeadway;
@@ -40,7 +42,7 @@ public final class RealSimulationParams
   }
 
   /* use default values */
-  public RealSimulationParams(Random rg,String carMoveModel) {
+  public RealSimulationParams(Random rg,CarMoveModel carMoveModel) {
     this.rg = rg;
     this.carMoveModel=carMoveModel;
     maxVelocity = DEFAULT_MAX_VELOCITY;

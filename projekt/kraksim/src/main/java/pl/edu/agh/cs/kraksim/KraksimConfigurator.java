@@ -1,8 +1,10 @@
 package pl.edu.agh.cs.kraksim;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class KraksimConfigurator {
 		return properties.getProperty("configuration");
 	}
 	
-	public static Properties getPropertiesFromFile(String ... args){
+	public static Properties getPropertiesFromFile(String ... args) {
 		File f = null;
 		String configPath = null;
 		if (args.length > 0){
@@ -64,6 +66,8 @@ public class KraksimConfigurator {
 		}
 		
 		Properties result = new Properties();
+
+
 		
 		try {
 			InputStream inStream = new FileInputStream(f);
@@ -75,7 +79,7 @@ public class KraksimConfigurator {
 			logger.error("Invalid file format: File " + f.getAbsolutePath());
 			System.exit(-1);
 		}
-		
+
 		return result;
 	}
 

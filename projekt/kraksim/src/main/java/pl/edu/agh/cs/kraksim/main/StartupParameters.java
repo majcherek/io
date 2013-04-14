@@ -22,7 +22,7 @@ public class StartupParameters {
 	private String modelFile = null;
 	private String trafficSchemeFile = null;
 	private int learnPhaseCount;
-	private String carMoveModel;
+	private CarMoveModel carMoveModel;
 
 	private boolean opanel = true;
 	private boolean enablePrediction = false;
@@ -83,6 +83,7 @@ public class StartupParameters {
 				break;
 			}
 			case 'X':{
+				System.out.println("CAR MODEL "+optionsHolder.getOptarg());
 				this.setCarMoveModel(optionsHolder.getOptarg());
 				logger.info("carMoveModel="+carMoveModel);
 				break;
@@ -370,12 +371,12 @@ public class StartupParameters {
 		return genRg;
 	}
 
-	public String getCarMoveModel() {
+	public CarMoveModel getCarMoveModel() {
 		return carMoveModel;
 	}
 
-	public void setCarMoveModel(String carMoveModel) {
-		this.carMoveModel = carMoveModel;
+	public void setCarMoveModel(String data) {
+		this.carMoveModel = new CarMoveModel(data);
 	}
 
 	public int getLearnPhaseCount() {
