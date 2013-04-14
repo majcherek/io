@@ -224,6 +224,7 @@ public class SetUpPanel extends JPanel
         storeParam       ( "yellowTransition", yellowTransition.getText() );
         storeParam       ( "workDir", fc.getCurrentDirectory().toString() );
         props.setProperty("carMoveModel", carMoveModel);
+        storeParam("carMoveModel", carMoveModel);
         
         props.setProperty("visualization", "true");
         
