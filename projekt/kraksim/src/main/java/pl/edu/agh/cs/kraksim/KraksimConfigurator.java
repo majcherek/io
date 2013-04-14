@@ -6,9 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -95,6 +93,15 @@ public class KraksimConfigurator {
 			paramsList.add("-v");
 		} else {
 			paramsList.add("-g");
+		}
+		
+		String carMoveModel;
+		paramsList.add("-X");
+		if((carMoveModel=params.getProperty("carMoveModel"))!=null){
+			paramsList.add(carMoveModel);
+		}
+		else{
+			paramsList.add("nagle");
 		}
 		
 		String minimalSpeedUsingPrediction = params.getProperty("minimalSpeedUsingPrediction");

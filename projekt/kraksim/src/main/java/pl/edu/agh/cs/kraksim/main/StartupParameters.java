@@ -4,7 +4,6 @@ import gnu.getopt.Getopt;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
-import java.util.Iterator;
 import java.util.Random;
 
 import org.apache.log4j.Logger;
@@ -23,6 +22,7 @@ public class StartupParameters {
 	private String modelFile = null;
 	private String trafficSchemeFile = null;
 	private int learnPhaseCount;
+	private String carMoveModel;
 
 	private boolean opanel = true;
 	private boolean enablePrediction = false;
@@ -64,7 +64,7 @@ public class StartupParameters {
 	// ===================================================================================
 
 	public void parseOptions(final String[] args, PrintWriter console) {
-		final Getopt optionsHolder = new Getopt(PROG_NAME, args, "+:hmvt:s:S:l:o:pr:gd:k:u:e:a:");
+		final Getopt optionsHolder = new Getopt(PROG_NAME, args, "+:hmvt:s:X:S:l:o:pr:gd:k:u:e:a:");
 		optionsHolder.setOpterr(true);
 
 		int option;
@@ -80,6 +80,11 @@ public class StartupParameters {
 			}
 			case 'v': {
 				visualization = true;
+				break;
+			}
+			case 'X':{
+				this.setCarMoveModel(optionsHolder.getOptarg());
+				logger.info("carMoveModel="+carMoveModel);
 				break;
 			}
 			case 'm': {
@@ -363,6 +368,14 @@ public class StartupParameters {
 
 	public Random getGenRg() {
 		return genRg;
+	}
+
+	public String getCarMoveModel() {
+		return carMoveModel;
+	}
+
+	public void setCarMoveModel(String carMoveModel) {
+		this.carMoveModel = carMoveModel;
 	}
 
 	public int getLearnPhaseCount() {
