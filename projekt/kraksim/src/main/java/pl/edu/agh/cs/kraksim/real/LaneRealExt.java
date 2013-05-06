@@ -11,6 +11,8 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
+import cern.jet.random.Zeta;
+
 import pl.edu.agh.cs.kraksim.core.Action;
 import pl.edu.agh.cs.kraksim.core.Lane;
 import pl.edu.agh.cs.kraksim.core.Link;
@@ -351,10 +353,16 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 				car.setBeforeLane(lane);
 				car.setBeforePos(car.pos);
 
-				// Nagel-Schreckenberg
 				// 1. Init velocity variable
 				int v = 0;
-
+				
+				boolean velocityZero = true;
+				
+				//VDR - check for v = 0	(slow start)				
+				if(car.velocity>0){
+					velocityZero = false;
+				}
+				
 				// 2. Acceleration
 				if (car.velocity < speedLimit) {
 					v = car.velocity + 1;
@@ -362,9 +370,33 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 					v = car.velocity;
 				}
 
-				// 3. Deceleration
-				if (params.rg.nextFloat() < params.decelProb) {
-					v--;
+				// 3. Deceleration when nagle
+				if(carMoveModel.getName().equals(CarMoveModel.MODEL_NAGLE)){
+					
+					if (params.rg.nextFloat() < Float.parseFloat(carMoveModel.getParametrs().get(CarMoveModel.MODEL_NAGLE_MOVE_PROB))) {
+						v--;
+					}
+					
+				}
+				// deceleration if vdr
+				else if(carMoveModel.getName().equals(CarMoveModel.MODEL_VDR)){
+					
+					float decChance = params.rg.nextFloat();
+					//if v = 0 => different (greater) chance of deceleration
+					if(velocityZero){
+						if(decChance < Float.parseFloat(carMoveModel.getParametrs().get(CarMoveModel.MODEL_VDR_0_PROB))){
+							--v;
+						}
+					}
+					else{
+						if(decChance < Float.parseFloat(carMoveModel.getParametrs().get(CarMoveModel.MODEL_VDR_MOVE_PROB))){
+							--v;
+						}
+					}
+					
+				}
+				else{
+					throw new RuntimeException("unknown model! "+carMoveModel.getName());
 				}
 
 				// 4. Drive (Move the car)

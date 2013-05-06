@@ -5,6 +5,12 @@ import java.util.Map;
 
 public class CarMoveModel {
 	
+	public static final String MODEL_VDR = "vdr";
+	public static final String MODEL_VDR_0_PROB = "zeroProb";
+	public static final String MODEL_VDR_MOVE_PROB = "movingProb";
+	public static final String MODEL_NAGLE = "nagle";
+	public static final String MODEL_NAGLE_MOVE_PROB = "decProb";
+	
 	private String name;
 	private Map<String, String> parametrs;
 	

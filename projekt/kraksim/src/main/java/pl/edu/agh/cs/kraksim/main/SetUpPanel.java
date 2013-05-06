@@ -178,9 +178,8 @@ public class SetUpPanel extends JPanel
 	moveModelPane.setBorder(BorderFactory
 			.createTitledBorder("Move model settings"));
 	JComboBox<String> moveModels = new JComboBox<String>();
-	moveModels.addItem("co");
-	moveModels.addItem("nagle");
-	moveModels.addItem("to po diable");
+	moveModels.addItem("nagle:decProb=0.2");
+	moveModels.addItem("vdr:zeroProb=0.5,movingProb=0.2");
 	moveModels.addActionListener(new ActionListener() {
 		
 		@Override
