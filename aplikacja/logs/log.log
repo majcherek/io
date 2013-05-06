@@ -11460,3 +11460,7 @@
 15:33:02:617 DEBUG [pl.edu.agh.cs.kraksim.simpledecision.IntersectionSimpleDecisionExt]  - getPhase for {lane 1 of [link W1X1 (street: null)]}
 15:33:02:617 DEBUG [pl.edu.agh.cs.kraksim.simpledecision.IntersectionSimpleDecisionExt]  - getPhase for {lane 1 of [link W1X1 (street: null)]}
 15:33:02:618 DEBUG [pl.edu.agh.cs.kraksim.simpledecision.IntersectionSimpleDecisionExt]  - getPhase for {lane 0 of [link X29X28 (street: null)]}
+18:19:25:055 DEBUG [pl.edu.agh.cs.kraksim.KraksimRunner]  - Prediction configured
+18:19:25:110 DEBUG [pl.edu.agh.cs.kraksim.KraksimRunner]  - true
+18:19:54:623 ERROR [pl.edu.agh.cs.kraksim.main.Simulation]  - Error: Data error while parsing file: C:\Users\molok\Desktop\Ruch\Ruch\aplikacja\tests\1\krakow_duzy.xml
+  Details: Parsing exceptionr : 

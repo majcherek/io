@@ -16,6 +16,8 @@ public class CarMoveModel {
 	
 	public CarMoveModel(String data){
 		
+		System.out.println(data);
+		
 		int index = data.indexOf(":");
 		if(index>0){
 			this.name=data.substring(0, index);
@@ -35,7 +37,6 @@ public class CarMoveModel {
 			this.name = data;
 		}
 
-		
 	}
 
 	public String getName() {

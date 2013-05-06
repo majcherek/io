@@ -23,7 +23,6 @@ public class KraksimRunner {
 	 */
 	public static void main(String[] args) {
 		
-		CarMoveModel c = new CarMoveModel("ala:in=123,aa=4,bb=0");
 
 		final Properties props = KraksimConfigurator.getPropertiesFromFile(args);
 
