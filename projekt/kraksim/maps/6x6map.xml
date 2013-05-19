@@ -74,7 +74,7 @@
         </road>
         <road from="W1" id="W1X1" to="X1">
             <uplink>
-                <main length="50"/>
+                <main length="50" numberOfLanes="2"/>
                 <left length="20"/>
             </uplink>
             <downlink>

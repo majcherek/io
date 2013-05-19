@@ -27,7 +27,7 @@ import pl.edu.agh.cs.kraksim.real.RealSimulationParams;
 
 public class StatsUtil {
 	static final int dumpStatsInterval = 60;
-	static final int dumpLinkStatsInterval = 300;
+	static final int dumpLinkStatsInterval = 50;
 
 	/**
 	 * Używana do liczenia średnich prędkości z pominięciem pojazdów

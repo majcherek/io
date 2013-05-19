@@ -111,6 +111,7 @@ public class SetUpPanel extends JPanel
     init.setVisible( true );
     init.setEnabled( true );
     myFrame.setVisible( true );
+    myFrame.pack();
   }
 
   private void createLayout() {
@@ -179,7 +180,8 @@ public class SetUpPanel extends JPanel
 			.createTitledBorder("Move model settings"));
 	JComboBox<String> moveModels = new JComboBox<String>();
 	moveModels.addItem("nagle:decProb=0.2");
-	moveModels.addItem("vdr:zeroProb=0.5,movingProb=0.2");
+	moveModels.addItem("vdr:zeroProb=0.9,movingProb=0.2");
+	moveModels.setEditable(true);
 	moveModels.addActionListener(new ActionListener() {
 		
 		@Override
