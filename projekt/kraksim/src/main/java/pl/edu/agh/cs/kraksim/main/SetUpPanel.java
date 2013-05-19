@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import javax.swing.BorderFactory;
@@ -20,6 +22,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import pl.edu.agh.cs.kraksim.sna.centrality.CentrallityCalculator;
@@ -28,6 +31,14 @@ import pl.edu.agh.cs.kraksim.sna.centrality.MeasureType;
 public class SetUpPanel extends JPanel
 {
   private static final long      serialVersionUID = -4635082252841397559L;
+  
+  private static final List<String> availableMoveModels = new ArrayList<String>();
+  
+  static{
+	  availableMoveModels.add(CarMoveModel.MODEL_NAGLE);
+	  availableMoveModels.add(CarMoveModel.MODEL_VDR);
+	  availableMoveModels.add(CarMoveModel.MODEL_BRAKELIGHT);
+  }
 
   private InputPanel             cityMapLocation;
   private InputPanel             travellingSchemeLocation;
@@ -179,8 +190,10 @@ public class SetUpPanel extends JPanel
 	moveModelPane.setBorder(BorderFactory
 			.createTitledBorder("Move model settings"));
 	JComboBox<String> moveModels = new JComboBox<String>();
-	moveModels.addItem("nagle:decProb=0.2");
-	moveModels.addItem("vdr:zeroProb=0.9,movingProb=0.2");
+	moveModels.addItem(getParam("carMoveModel"));
+	moveModels.addItem(CarMoveModel.MODEL_NAGLE+":decProb=0.2");
+	moveModels.addItem(CarMoveModel.MODEL_VDR+":zeroProb=0.9,movingProb=0.2");
+	moveModels.addItem(CarMoveModel.MODEL_BRAKELIGHT+":zeroProb=0.9,movingProb=0.2,brakeProb=0.2,threshold=5");
 	moveModels.setEditable(true);
 	moveModels.addActionListener(new ActionListener() {
 		
@@ -188,6 +201,18 @@ public class SetUpPanel extends JPanel
 		public void actionPerformed(ActionEvent e) {
 			JComboBox<String> source = (JComboBox<String>)e.getSource();
 			carMoveModel = (String) source.getSelectedItem();
+			int c = carMoveModel.indexOf(':');
+			String check = null;
+			if(c==-1){
+				check = carMoveModel;
+			}
+			else{
+				check = carMoveModel.substring(0, c);
+			}
+			if(!availableMoveModels.contains(check)){
+				source.setSelectedIndex(0);
+				JOptionPane.showMessageDialog(source.getParent(), "Unknown move model : "+check,"Error",JOptionPane.ERROR_MESSAGE);
+			}
 		}
 	});
 	

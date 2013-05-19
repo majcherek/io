@@ -1,0 +1,23 @@
+CITY STATS
+==========
+  sim. duration   avg. velocity
+            679            0.48
+
+ROUTE STATS
+===========
+  from     to  count   avg. duration      <-std dev.   avg. velocity         <-[kph]
+    W1     N1    150           275.9           153.6            0.36             9.8
+    E1     W1     50           520.9           143.3            0.67            18.1
+
+LINK STATS
+==========
+  from     to  count   avg. duration      <-std dev.   avg. velocity         <-[kph]
+   X13     X7     50            29.9             1.7            1.67            45.1
+    E1    X31     50            29.7             0.9            1.68            45.5
+    X1     N1    150            28.9             1.5            1.73            46.7
+   X19    X13     50            29.7             1.3            1.68            45.5
+    X1     W1     50            28.7             1.8            1.74            47.0
+    X7     X1     50           291.8           112.9            0.17             4.6
+   X31    X25     50            30.1             2.0            1.66            44.8
+    W1     X1    150            79.0            51.1            0.63            17.1
+   X25    X19     50            29.9             1.9            1.67            45.2

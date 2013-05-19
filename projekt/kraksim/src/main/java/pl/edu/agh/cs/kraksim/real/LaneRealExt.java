@@ -395,6 +395,50 @@ class LaneRealExt implements LaneBlockIface, LaneCarInfoIface, LaneMonIface {
 					}
 					
 				}
+				//Brake light model
+				else if(carMoveModel.getName().equals(CarMoveModel.MODEL_BRAKELIGHT)){
+					
+					float decChance = params.rg.nextFloat();
+					if(velocityZero){
+						if(decChance < Float.parseFloat(carMoveModel.getParametrs().get(CarMoveModel.MODEL_BRAKELIGHT_0_PROB))){
+							--v;
+						}
+					}
+					else{
+						if (nextCar!=null && nextCar.isBraking()) {
+							int threshold = Integer
+									.parseInt(carMoveModel
+											.getParametrs()
+											.get(CarMoveModel.MODEL_BRAKELIGHT_DISTANCE_THRESHOLD));
+							double ts = ((threshold < v) ? (threshold) : (v));
+							double th = (nextCar.pos-car.pos)/(double)v;
+							if (th < ts) {
+								if (decChance < Float
+										.parseFloat(carMoveModel
+												.getParametrs()
+												.get(CarMoveModel.MODEL_BRAKELIGHT_BRAKE_PROB))) {
+									--v;
+									car.setBraking(true);
+								}
+								else{
+									car.setBraking(false);
+								}
+							}
+
+						} else {
+							if (decChance < Float.parseFloat(carMoveModel
+									.getParametrs().get(
+											CarMoveModel.MODEL_BRAKELIGHT_MOVE_PROB))) {
+								--v;
+								car.setBraking(true);
+							}
+							else{
+								car.setBraking(false);
+							}
+						}
+					}
+					
+				}
 				else{
 					throw new RuntimeException("unknown model! "+carMoveModel.getName());
 				}

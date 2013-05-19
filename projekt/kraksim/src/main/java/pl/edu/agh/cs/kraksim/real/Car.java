@@ -12,6 +12,8 @@ import pl.edu.agh.cs.kraksim.main.Driver;
 
 final class Car {
 	private static final Logger logger = Logger.getLogger(Car.class);
+	
+	private boolean braking=false;
 
 	final Driver driver;
 	/*
@@ -44,6 +46,14 @@ final class Car {
 		if (logger.isTraceEnabled()) {
 			logger.trace("\n Driver= " + driver + "\n rerouting= " + rerouting);
 		}
+	}
+	
+	public boolean isBraking() {
+		return braking;
+	}
+
+	public void setBraking(boolean braking) {
+		this.braking = braking;
 	}
 
 	//TODO: change this
