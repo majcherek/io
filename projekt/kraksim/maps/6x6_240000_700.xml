@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <traffic>
-    <scheme count="150">
+    <scheme count="2">
         <gateway id="W1">
-            <uniform a="0" b="10"/>
+            <uniform a="0" b="20"/>
         </gateway>
         <gateway id="N1"/>
     </scheme>
-    <scheme count="50">
+    <scheme count="0">
         <gateway id="E1">
             <uniform a="0" b="10"/>
         </gateway>
