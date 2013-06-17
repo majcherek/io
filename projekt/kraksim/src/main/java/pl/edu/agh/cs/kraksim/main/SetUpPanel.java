@@ -38,6 +38,7 @@ public class SetUpPanel extends JPanel
 	  availableMoveModels.add(CarMoveModel.MODEL_NAGLE);
 	  availableMoveModels.add(CarMoveModel.MODEL_VDR);
 	  availableMoveModels.add(CarMoveModel.MODEL_BRAKELIGHT);
+	  availableMoveModels.add(CarMoveModel.MODEL_MULTINAGLE);
   }
 
   private InputPanel             cityMapLocation;
@@ -194,6 +195,7 @@ public class SetUpPanel extends JPanel
 	moveModels.addItem(CarMoveModel.MODEL_NAGLE+":decProb=0.2");
 	moveModels.addItem(CarMoveModel.MODEL_VDR+":zeroProb=0.9,movingProb=0.2");
 	moveModels.addItem(CarMoveModel.MODEL_BRAKELIGHT+":zeroProb=0.9,movingProb=0.2,brakeProb=0.2,threshold=5");
+	moveModels.addItem(CarMoveModel.MODEL_MULTINAGLE+":decProb=0.2");
 	moveModels.setEditable(true);
 	moveModels.addActionListener(new ActionListener() {
 		

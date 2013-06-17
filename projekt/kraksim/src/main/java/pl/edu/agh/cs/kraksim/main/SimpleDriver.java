@@ -102,4 +102,9 @@ public class SimpleDriver implements Comparable<SimpleDriver>, Driver {
 	public Color getColor() {
 	    return this.color;
 	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
 }

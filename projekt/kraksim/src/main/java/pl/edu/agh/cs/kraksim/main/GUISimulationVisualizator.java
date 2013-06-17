@@ -111,7 +111,7 @@ class GUISimulationVisualizator implements SimulationVisualizator {
 		ctrllPane.add(wrap("refresh period", refreshPeriodSlider));
 		refreshPeriod = 1;
 
-		turnDelaySlider = new JSlider(new DefaultBoundedRangeModel(25, 0, 0,
+		turnDelaySlider = new JSlider(new DefaultBoundedRangeModel(0, 0, 0,
 				1000));
 		turnDelaySlider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {

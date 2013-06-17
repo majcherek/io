@@ -21,16 +21,20 @@ public class Action
 {
 
   /* action moves car from source lane... */
-  private final Lane   source;
+  private Lane   source;
 
-  /* ...and puts it on target link (on its main lane) */
+  public void setSource(Lane source) {
+	this.source = source;
+}
+
+/* ...and puts it on target link (on its main lane) */
   private final Link   target;
 
   /* ...provided that all priority lanes are free */
   private final Lane[] priorLanes;
 
   /* we make a shallow copy of priorLanes array */
-  Action(Lane source, Link target, Lane[] priorLanes) {
+  public Action(Lane source, Link target, Lane[] priorLanes) {
     this.source = source;
     this.target = target;
     this.priorLanes = new Lane[priorLanes.length];

@@ -1,5 +1,6 @@
 package pl.edu.agh.cs.kraksim.real;
 
+import java.awt.Color;
 import java.util.ListIterator;
 
 import org.apache.log4j.Logger;
@@ -9,6 +10,7 @@ import pl.edu.agh.cs.kraksim.core.Lane;
 import pl.edu.agh.cs.kraksim.core.Link;
 import pl.edu.agh.cs.kraksim.iface.sim.Route;
 import pl.edu.agh.cs.kraksim.main.Driver;
+import pl.edu.agh.cs.kraksim.main.SimpleDriver;
 
 final class Car {
 	private static final Logger logger = Logger.getLogger(Car.class);
@@ -22,6 +24,16 @@ final class Car {
 	 */
 	protected ListIterator<Link> linkIterator;
 	//  private ListIterator<Link> copyLinkIterator;
+	
+	private int enterPos=-1;
+
+	public int getEnterPos() {
+		return enterPos;
+	}
+
+	public void setEnterPos(int enterPos) {
+		this.enterPos = enterPos;
+	}
 
 	protected Action action;
 	int pos;
@@ -53,6 +65,14 @@ final class Car {
 	}
 
 	public void setBraking(boolean braking) {
+		if(driver instanceof SimpleDriver){
+			if(braking){
+				((SimpleDriver)driver).setColor(Color.RED);
+			}
+			else{
+				((SimpleDriver)driver).setColor(Color.YELLOW);
+			}
+		}
 		this.braking = braking;
 	}
 

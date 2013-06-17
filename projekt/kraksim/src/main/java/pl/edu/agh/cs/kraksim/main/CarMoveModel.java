@@ -18,6 +18,9 @@ public class CarMoveModel {
 	public static final String MODEL_BRAKELIGHT_BRAKE_PROB = "brakeProb";
 	public static final String MODEL_BRAKELIGHT_DISTANCE_THRESHOLD = "threshold";
 	
+	public static final String MODEL_MULTINAGLE = "multiNagle";
+	public static final String MODEL_MULTINAGLE_MOVE_PROB = "decProb";
+	
 	private String name;
 	private Map<String, String> parametrs;
 	
